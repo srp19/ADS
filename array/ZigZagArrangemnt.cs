@@ -4,10 +4,7 @@ public class ZigZagArrangemnt
 {
     private void ArrangeZigZag(int[] array)
     {
-        //12345 ? duplicates-no? negative numbers?
-
         bool isLess = true;
-
         for (int i = 0; i < array.Length - 1; i++)
         {
             if (isLess)
