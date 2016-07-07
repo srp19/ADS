@@ -90,12 +90,11 @@ namespace ADS.array
         }
 
         // Driver program to test above functions
-        int Test()
+        public void Main()
         {
             int[] arr = new int[] { 23, 45, -34, 12, 0, 98, -99, 4, 189, -1, 4 };
             int n = arr.Length;
             tugOfWar(arr, n);
-            return 0;
         }
     }
 }

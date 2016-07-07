@@ -31,7 +31,7 @@ namespace ADS.array
             }
             return maxWaterTrapped;
         }
-        public void Test()
+        public void Main()
         {
             int[] input = new int[] { 1,5,2,3,1,7,2,4 };
             Console.WriteLine(TrapWater(input));

@@ -32,7 +32,7 @@ public class ZigZagArrangemnt
         array[secondIndex] = temp;
     }
 
-    public void Test()
+    public void Main()
     {
         int[] array = new int[] { 4, 5, 3, 6, 7, 9 };
         ArrangeZigZag(array);
