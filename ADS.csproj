@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="array\TrappingWater.cs" />
+    <Compile Include="array\TugOfWar.cs" />
     <Compile Include="array\ZigZagArrangemnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="array\TrappingWater.md" />
+    <None Include="array\TugOfWar.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
