@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="array\AdditiveNumber.cs" />
     <Compile Include="array\BuyAndSellStocks.cs" />
     <Compile Include="array\PeakElement.cs" />
     <Compile Include="array\NextGreaterElement.cs" />
