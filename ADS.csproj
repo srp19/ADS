@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="array\AdditiveNumber.cs" />
     <Compile Include="array\BuyAndSellStocks.cs" />
+    <Compile Include="array\CountInversionOfSize3.cs" />
     <Compile Include="array\PeakElement.cs" />
     <Compile Include="array\NextGreaterElement.cs" />
     <Compile Include="array\TrappingWater.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="tree\lca.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="array\CountInversionOfSize3.md" />
     <None Include="array\PeakElement.md" />
     <None Include="array\TrappingWater.md" />
     <None Include="array\TugOfWar.md" />
