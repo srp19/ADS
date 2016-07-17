@@ -10,40 +10,50 @@ namespace ADS.array
     {
         public void Main()
         {
-            string num = "112358";
-            Console.WriteLine(IsAdditiveNumber(num));
+            string numberStr = "112358";
+            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+
+            numberStr = "199100";
+            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+
+            numberStr = "11";
+            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+
+            numberStr = "110203";
+            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
         }
-        public bool IsAdditiveNumber(string num)
+        public bool IsAdditiveNumber(string numberStr)
         {
-            int n = num.Length;
+            int totalChars = numberStr.Length;
             //number of characters at a time. [1] [11] ...
-            for (int i = 1; i <= n / 2; i++)
+            for (int noOfFirstStrChars = 1; noOfFirstStrChars <= totalChars / 2; noOfFirstStrChars++)
             {
-                if (num[0] == '0' && i > 1) return false;
-                long x1 = long.Parse(num.Substring(0, i));
+                if (noOfFirstStrChars > 1 && numberStr[0] == '0') return false;
+                long num1 = long.Parse(numberStr.Substring(0, noOfFirstStrChars));
 
                 //number of characters at time. [1] [12] ...
-                for (int j = 1; Math.Max(j, i) <= n - i - j; j++)
+                for (int noOfSecondStrChars = 1; Math.Max(noOfFirstStrChars, noOfSecondStrChars) <= 
+                    totalChars - noOfFirstStrChars - noOfSecondStrChars; noOfSecondStrChars++)
                 {
-                    if (num[i] == '0' && j > 1) break;
+                    if (noOfSecondStrChars > 1 && numberStr[noOfFirstStrChars] == '0') break;
 
                     //first iteration 1 character at a time.. so x1 = 1 and x2 = 1
-                    long x2 = long.Parse(num.Substring(i, j));
+                    long num2 = long.Parse(numberStr.Substring(noOfFirstStrChars, noOfSecondStrChars));
 
                     //Recursively iterate the entire loop (first time with 1 character each)
-                    if (isValid(x1, x2, j + i, num)) return true;
+                    if (isValid(num1, num2, noOfFirstStrChars + noOfSecondStrChars, numberStr)) return true;
                 }
             }
             return false;
         }
-        private bool isValid(long x1, long x2, int start, string num)
+        private bool isValid(long num1, long num2, int totalCharsConsidered, string numberStr)
         {
-            if (start == num.Length) return true;
-            x2 = x2 + x1;
-            x1 = x2 - x1;
-            string sum = x2.ToString();
-            return num.Substring(start).StartsWith(sum) &&
-                isValid(x1, x2, start + sum.Length, num);
+            if (totalCharsConsidered == numberStr.Length) return true;
+            num2 = num2 + num1;
+            num1 = num2 - num1;
+            string sum = num2.ToString();
+            return numberStr.Substring(totalCharsConsidered).StartsWith(sum) &&
+                isValid(num1, num2, totalCharsConsidered + sum.Length, numberStr);
         }
 
     }
