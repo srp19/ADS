@@ -26,34 +26,36 @@ namespace ADS.array
         {
             int totalChars = numberStr.Length;
             //number of characters at a time. [1] [11] ...
-            for (int noOfFirstStrChars = 1; noOfFirstStrChars <= totalChars / 2; noOfFirstStrChars++)
+            for (int noOfFirstSubStrChars = 1; noOfFirstSubStrChars <= totalChars / 2; noOfFirstSubStrChars++)
             {
-                if (noOfFirstStrChars > 1 && numberStr[0] == '0') return false;
-                long num1 = long.Parse(numberStr.Substring(0, noOfFirstStrChars));
+                if (noOfFirstSubStrChars > 1 && numberStr[0] == '0') return false;
+                long num1 = long.Parse(numberStr.Substring(0, noOfFirstSubStrChars));
 
                 //number of characters at time. [1] [12] ...
-                for (int noOfSecondStrChars = 1; Math.Max(noOfFirstStrChars, noOfSecondStrChars) <= 
-                    totalChars - noOfFirstStrChars - noOfSecondStrChars; noOfSecondStrChars++)
+                for (int noOfSecondSubStrChars = 1; Math.Max(noOfFirstSubStrChars, noOfSecondSubStrChars) <= 
+                    totalChars - noOfFirstSubStrChars - noOfSecondSubStrChars; noOfSecondSubStrChars++)
                 {
-                    if (noOfSecondStrChars > 1 && numberStr[noOfFirstStrChars] == '0') break;
+                    if (noOfSecondSubStrChars > 1 && numberStr[noOfFirstSubStrChars] == '0') break;
 
                     //first iteration 1 character at a time.. so x1 = 1 and x2 = 1
-                    long num2 = long.Parse(numberStr.Substring(noOfFirstStrChars, noOfSecondStrChars));
+                    long num2 = long.Parse(numberStr.Substring(noOfFirstSubStrChars, noOfSecondSubStrChars));
 
                     //Recursively iterate the entire loop (first time with 1 character each)
-                    if (isValid(num1, num2, noOfFirstStrChars + noOfSecondStrChars, numberStr)) return true;
+                    if (isValid(num1, num2, noOfFirstSubStrChars + noOfSecondSubStrChars, numberStr)) return true;
                 }
             }
             return false;
         }
-        private bool isValid(long num1, long num2, int totalCharsConsidered, string numberStr)
+        private bool isValid(long num1, long num2, int totalNoOfSubStrChars, string numberStr)
         {
-            if (totalCharsConsidered == numberStr.Length) return true;
+            if (totalNoOfSubStrChars == numberStr.Length) return true;
             num2 = num2 + num1;
             num1 = num2 - num1;
             string sum = num2.ToString();
-            return numberStr.Substring(totalCharsConsidered).StartsWith(sum) &&
-                isValid(num1, num2, totalCharsConsidered + sum.Length, numberStr);
+            string subStr = numberStr.Substring(totalNoOfSubStrChars);
+            bool subStrStartsWithSum = subStr.StartsWith(sum);
+            return subStrStartsWithSum &&
+                isValid(num1, num2, totalNoOfSubStrChars + sum.Length, numberStr);
         }
 
     }

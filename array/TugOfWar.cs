@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -92,9 +94,10 @@ namespace ADS.array
         // Driver program to test above functions
         public void Main()
         {
-            int[] arr = new int[] { 23, 45, -34, 12, 0, 98, -99, 4, 189, -1, 4 };
+            int[] arr = new int[] { 3, 4, 5, -3, 100, 1, 89, 54, 23, 20 }; // { 23, 45, -34, 12, 0, 98, -99, 4, 189, -1, 4 };
             int n = arr.Length;
             tugOfWar(arr, n);
         }
+        
     }
 }
