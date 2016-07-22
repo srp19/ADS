@@ -53,6 +53,7 @@
     <Compile Include="array\PeakElement.cs" />
     <Compile Include="array\NextGreaterElement.cs" />
     <Compile Include="array\TrappingWater.cs" />
+    <Compile Include="array\TripletSumLessThanTotal.cs" />
     <Compile Include="array\TugOfWar.cs" />
     <Compile Include="array\ZigZagArrangemnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -46,16 +46,13 @@ namespace ADS.array
             low++;
             while (low <= high)
             {
-                string info_str = string.Empty;
                 if (arr[pivot] > arr[low])
                 {
-                    info_str  = "arr[pivot] > arr[low]";
                     low++;
                     continue;
                 }
                 if (arr[pivot] <= arr[high])
                 {
-                    info_str = "arr[pivot] <= arr[high]";
                     high--;
                     continue;
                 }
@@ -77,10 +74,19 @@ namespace ADS.array
 
         public static void Main(String[] args)
         {
-            int[] arr = { 4, 3, 2, 1 };// { 6, 2, 1, 6, 8, 9, 6 };
-            KthElementInArray kthElement = new KthElementInArray();
-            Console.WriteLine(kthElement.kthElement(arr, arr.Length / 2));
-            Console.WriteLine(string.Join(",", arr));
+            /*
+             * Kth largest element in an array.
+             * Use quickselect of quicksort to find the solution
+             *  in hopefully O(nlogn) time.
+             * Test cases
+             * Sorted array
+             * Reverse sorted array
+             */
+            int[] arr = { 4, 3, 2, 1 };
+            KthElementInArray kthElement = 
+                new KthElementInArray();
+            Console.WriteLine(
+                kthElement.kthElement(arr, arr.Length / 2));
         }
 
     }
