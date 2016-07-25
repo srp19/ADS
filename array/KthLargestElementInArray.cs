@@ -85,8 +85,7 @@ namespace ADS.array
             int[] arr = { 4, 3, 2, 1 };
             KthElementInArray kthElement = 
                 new KthElementInArray();
-            Console.WriteLine(
-                kthElement.kthElement(arr, arr.Length / 2));
+            Console.WriteLine(kthElement.kthElement(arr, 2));
         }
 
     }

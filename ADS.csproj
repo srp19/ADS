@@ -52,16 +52,19 @@
     <Compile Include="array\KthLargestElementInArray.cs" />
     <Compile Include="array\PeakElement.cs" />
     <Compile Include="array\NextGreaterElement.cs" />
+    <Compile Include="array\PeakElementRecursive.cs" />
+    <Compile Include="array\SubArrayWithGivenSum.cs" />
     <Compile Include="array\TrappingWater.cs" />
     <Compile Include="array\TripletSumLessThanTotal.cs" />
     <Compile Include="array\TugOfWar.cs" />
     <Compile Include="array\ZigZagArrangemnt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="strings\FirstNonRepeatingCharacter.cs" />
+    <Compile Include="strings\IsUniqueCharactersBit.cs" />
     <Compile Include="tree\lca.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="array\CountInversionOfSize3.md" />
-    <None Include="array\KthLargestElementInArray.md" />
     <None Include="array\PeakElement.md" />
     <None Include="array\TrappingWater.md" />
     <None Include="array\TugOfWar.md" />

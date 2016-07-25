@@ -8,7 +8,6 @@ namespace ADS.array
 {
     public class TripletSumLessThanTotal
     {
-
         public virtual int findAllTriplets(int[] input, int total)
         {
             Array.Sort(input);
@@ -17,7 +16,6 @@ namespace ADS.array
             {
                 int j = i + 1;
                 int k = input.Length - 1;
-
                 while (j < k)
                 {
                     if (input[i] + input[j] + input[k] >= total)
@@ -36,8 +34,15 @@ namespace ADS.array
 
         public static void Main(string[] args)
         {
+            /*
+                * Given array with unique numbers 
+                * and a total,  find all triplets 
+                * whose sum is less than total
+                * 
+                * */
             int[] input = new int[] { 5, 1, 3, 4, 7 };
-            TripletSumLessThanTotal tt = new TripletSumLessThanTotal();
+            TripletSumLessThanTotal tt =
+                new TripletSumLessThanTotal();
             Console.Write(tt.findAllTriplets(input, 12));
         }
     }

@@ -13,13 +13,25 @@ namespace ADS.array
          * Time complexity of this method is O(n^2)
          * Space complexity is O(1)
          */
-        // Returns count of inversions of size 3
+        /*
+                *Each greater element on left side of middle element can be in
+                *  inversion triplet with every element on right side of middle element.
+                   e.g. {6,5,4,3,2,1}
+                   If we consider 4 as middle element then two greater elements on left side
+                   are {6,5} and three smaller elements on right side are {3,2,1}.
+                   Total 2*3=6 inversion triplets considering 4 as middle element will be:
+                   {6,4,3}
+                   {6,4,2}
+                   {6,4,1}
+                   {5,4,3}
+                   {5,4,2}
+                   {5,4,1} 
+               */
         public int findInversions(int[] input)
         {
             int inversion = 0;
             for (int i = 1; i < input.Length - 1; i++)
             {
-                // Count all greater elements on left of input[i]
                 int larger = 0;
                 for (int k = 0; k < i; k++)
                 {
@@ -28,8 +40,6 @@ namespace ADS.array
                         larger++;
                     }
                 }
-
-                // Count all smaller elements on right of input[i]
                 int smaller = 0;
                 for (int k = i + 1; k < input.Length; k++)
                 {
@@ -38,25 +48,7 @@ namespace ADS.array
                         smaller++;
                     }
                 }
-
-                // Update inversion count by adding all inversions
-                // that have arr[i] as middle of three elements
                 inversion += smaller * larger;
-
-                /*
-                 *Each greater element on left side of middle element can be in
-                 *  inversion triplet with every element on right side of middle element.
-                    e.g. {6,5,4,3,2,1}
-                    If we consider 4 as middle element then two greater elements on left side
-                    are {6,5} and three smaller elements on right side are {3,2,1}.
-                    Total 2*3=6 inversion triplets considering 4 as middle element will be:
-                    {6,4,3}
-                    {6,4,2}
-                    {6,4,1}
-                    {5,4,3}
-                    {5,4,2}
-                    {5,4,1} 
-                */
             }
             return inversion;
         }

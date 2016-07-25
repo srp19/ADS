@@ -10,25 +10,6 @@ namespace ADS.array
     {
         private int MaxProfit(int[] stockPrices)
         {
-            /*
-            minPrice=100
-            maxProfit=0
-
-            ===it-1
-            minPrice-80
-            maxProfit-0
-
-            ===it-2
-            minPrice-80
-            maxProfit-40 (120-80 > 0)
-
-            ===it-3
-            minPrice=80
-            maxProfit=50
-
-            ..
-            */
-
             int minPrice = stockPrices[0];
             int maxProfit = 0;
 
