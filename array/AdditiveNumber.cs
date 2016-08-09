@@ -13,14 +13,14 @@ namespace ADS.array
             string numberStr = "112358";
             Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
 
-            numberStr = "199100";
-            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+            //numberStr = "199100";
+            //Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
 
-            numberStr = "11";
-            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+            //numberStr = "11";
+            //Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
 
-            numberStr = "110203";
-            Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
+            //numberStr = "110203";
+            //Console.WriteLine(numberStr + " is Additive number? " + IsAdditiveNumber(numberStr));
         }
         public bool IsAdditiveNumber(string numberStr)
         {

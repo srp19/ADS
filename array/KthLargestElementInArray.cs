@@ -83,7 +83,7 @@ namespace ADS.array
              * Reverse sorted array
              */
             int[] arr = { 4, 3, 2, 1 };
-            KthElementInArray kthElement = 
+            KthElementInArray kthElement =
                 new KthElementInArray();
             Console.WriteLine(kthElement.kthElement(arr, 2));
         }

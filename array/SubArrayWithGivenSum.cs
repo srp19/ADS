@@ -21,8 +21,8 @@ namespace ADS.array
                 this.outerInstance = outerInstance;
             }
 
-            internal int start;
-            internal int end;
+            public int start;
+            public int end;
 
             public override string ToString()
             {
